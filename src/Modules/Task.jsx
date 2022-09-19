@@ -1,4 +1,5 @@
 import React from "react";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const TaskList = ({ taskList, title, onChangeHandler }) => {
   return (
@@ -13,7 +14,7 @@ const TaskList = ({ taskList, title, onChangeHandler }) => {
             </thead>
             {taskList.map((task) => {
               return (
-                <div class="form-check" key={task.id}>
+                <div className="form-check" key={task.id}>
                   <input
                     className="form-check-input"
                     type="checkbox"
@@ -22,13 +23,10 @@ const TaskList = ({ taskList, title, onChangeHandler }) => {
                     id="flexCheckDefault"
                     onChange={(e) => onChangeHandler(e, task.id)}
                   />
-                  <label className="form-check-label" for="flexCheckDefault">
-                    <tbody>
-                      <tr>
-                        <td> {task.value}</td>{" "}
-                      </tr>
-                    </tbody>
+                  <label className="form-check-label" htmlFor="flexCheckDefault">
+                    {task.value}{" "}
                   </label>
+                   <ContentCopyIcon  />
                 </div>
               );
             })}

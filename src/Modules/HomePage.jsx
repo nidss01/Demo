@@ -1,103 +1,3 @@
-// import React, { useState } from 'react'
-// import './HomePage.css'
-// // import Task from './Task';
-// import uuid from 'react-uuid';
-
-
-// export default function HomePage() {
-
-//     const [inputList, setInputList] = useState("")
-//     const [items, setItems] = useState([]);
-//     const [isPending,setIspending] = useState(true)
-//     console.log(items)
-
-//     const itemEvent = (event) => {
-//         setInputList(event.target.value)
-//     }
-
-//     const listItem = () => {
-//         if (inputList) {
-//             setItems((oldData) => {
-//                 return [...oldData, { id:uuid(), value: inputList, isPending }];
-//             })
-//             setInputList('')
-//         }
-//         else {
-//             alert("provide values")
-//         }
-//     }
-
-//     // const pendingTask = () => {
-//     //     setItems((oldData) => {
-//     //         return [...oldData, { id:uuid(), value: inputList, isPending:false }];
-//     //     })
-//     // }
-
-
-//   const pendingTask = (e) => {
-//     console.log("clicked")
-//     console.log(e.target.id)
-//     //  passing function to setData method
-//     setItems(prevState => {
-//       const newState = prevState.map(itemval => {
-//         //  if id equals 2, update country property
-//         // if (itemval.id === uuid) {
-//           return {...itemval, isPending:false};
-//         // }
-
-//         // otherwise return object as is
-//         // return itemval;
-//       });
-
-//       return newState;
-//     });
-//   };
-
-
-//     return (
-//         <>
-//             <div className="Main_div ">
-//                 <div className="center_div datatask">
-//                     <div className="">
-//                         <br />
-//                         <h1 className='head'>Make Your ToDo</h1>
-//                         <br />
-//                     </div>
-//                     <div className="row ">
-//                         <span className="col-8">
-//                             <input type="text" placeholder="Add Tasks" value={inputList} name="title" className='textinput' onChange={itemEvent} />
-//                         </span>
-//                         <span className="col-4">
-//                             <button className='addbutton' onClick={listItem}> + </button>
-//                         </span>
-//                     </div>
-//                     <ol className='main_list '>
-//                         <div className="container-fluid">
-//                             {items.map((itemval) => {
-//                                 return (
-//                                     <>
-//                                         <div className="row ">
-//                                             <div className="form-check ">
-//                                                 <span className="col-8">
-//                                                     <input className="" type="checkbox" key={uuid()} onClick={pendingTask}/>
-//                                                 </span>
-//                                                 <span className="col-4">
-//                                                     <li className=''>{itemval.value}</li>
-//                                                 </span>
-//                                             </div>
-//                                         </div>
-//                                     </>
-//                                 )
-//                             })}
-//                         </div>
-//                     </ol>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
-
-
 import React, { useState, useEffect } from "react";
 import uniqid from "uniqid";
 import TaskList from "./Task";
@@ -176,10 +76,10 @@ const Homepage = () => {
                             </div>
                             <div className="col-6">
                                 <div
+                                style={{marginLeft:"100%" , marginTop:"-10%"}}
                                     onClick={listOfTask}
                                     type="button"
-                                    class="btn btn-primary"
-                                >
+                                    className="btn btn-primary" >
                                     Add
                                 </div>
                             </div>
